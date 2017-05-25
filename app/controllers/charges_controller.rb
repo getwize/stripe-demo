@@ -16,7 +16,7 @@ before_action :authenticate_user!
 	  if Rails.env.production?
      		 Stripe.api_key = ENV['Javier_Secret_Key_pro']
     else
-     		 Stripe.api_key = ENV['Javier_Secret_Key'] 
+     		 Stripe.api_key = ENV['Javier_Secret_Key_pro'] 
      end
 
 	  customer = Stripe::Customer.create(
@@ -50,7 +50,7 @@ before_action :authenticate_user!
 		if Rails.env.production?
      		 Stripe.api_key = ENV['Javier_Secret_Key_pro']
     	else
-     		 Stripe.api_key = ENV['Javier_Secret_Key']
+     		 Stripe.api_key = ENV['Javier_Secret_Key_pro']
      	end
 
 		  token = params[:stripeToken]
